@@ -58,7 +58,8 @@ const eventsDashboard = [
 class EventDashboard extends Component {
   state = {
     events: eventsDashboard,
-    isOpen: false
+    isOpen: false,
+    selectedEvent: null
   };
 
   handleFormOpen = () => {
@@ -73,7 +74,7 @@ class EventDashboard extends Component {
     });
   };
 
-  handleCreateEvent = newEvent => {
+  handleCreateEvent = (newEvent) => {
     newEvent.id = cuid();
     newEvent.hostPhotoURL = "/assets/user.png";
     const updatedEvents = [...this.state.events, newEvent];
