@@ -89,13 +89,6 @@ class EventDashboard extends Component {
     });
   };
 
-  handleOpenEvent = (eventToOpen) => () => {
-    this.setState({
-      selectedEvent: eventToOpen,
-      isOpen: true
-    });
-  };
-
   handleCreateEvent = (newEvent) => {
     newEvent.id = cuid();
     newEvent.hostPhotoURL = "/assets/user.png";
@@ -110,6 +103,13 @@ class EventDashboard extends Component {
     const updatedEvents = this.state.events.filter(e => e.id !== eventId);
     this.setState({
       events: updatedEvents
+    });
+  };
+
+  handleOpenEvent = (eventToOpen) => () => {
+    this.setState({
+      selectedEvent: eventToOpen,
+      isOpen: true
     });
   };
 
