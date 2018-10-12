@@ -9,7 +9,7 @@ export const loginUser = (state, payload) => {
     return {
         ...state,
         authenticated: true,
-        currrentUser: payload.credentials.email       
+        currentUser: payload.credentials.email       
     }
 }
 
